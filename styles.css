@@ -200,14 +200,14 @@ h1 {
 /** Button Heaser **/
 ---
 
-/**.btn {
+.btn {
   padding: 12px 24px;
   border-radius: 8px;
   font-weight: 600;
   font-size: 16px;
   text-decoration: none;
   transition: 0.2s;
-}**/
+}
 
 .btn-primary {
   background: var(--accent);
@@ -221,13 +221,13 @@ h1 {
 }
 
 ---
-.buttons {
+/*.buttons {
     display: flex;
     gap: 1rem; /* Abstand zwischen den Buttons */
     align-items: center;
     margin: 1rem 0;
 }
-
+/*
 .btn {
     display: inline-block;
     padding: 0.75rem 1.5rem;
@@ -239,7 +239,7 @@ h1 {
     border: none;
     cursor: pointer;
     min-width: 120px; /* Minimale Breite für Buttons */
-}
+}*/
 
 
 /* Für bessere mobile Darstellung */
