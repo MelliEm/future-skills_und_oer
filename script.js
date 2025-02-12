@@ -6,6 +6,15 @@ document.addEventListener('DOMContentLoaded', function() {
     setupKeyboardNavigation();
     setupThemeToggle();
     initializeNavigation();
+    
+    // Button-Funktionalität für "Jetzt lesen"
+    const readButton = document.querySelector('.btn-primary');
+    if (readButton) {
+        readButton.addEventListener('click', function(e) {
+            e.preventDefault();
+            scrollToDefinitions();
+        });
+    }
 });
 
 // ===== Navigation Initialisierung =====
@@ -224,3 +233,37 @@ function displaySearchResults(results, searchTerm) {
     searchResults.innerHTML = resultsHtml;
     searchResults.style.display = 'block';
 }
+
+
+// ===== Scroll zu Definitionen =====
+function scrollToDefinitions() {
+    const definitionSection = document.getElementById('definitions');
+    if (definitionSection) {
+        const offset = 20; // Abstand von der Oberseite
+        const bodyRect = document.body.getBoundingClientRect().top;
+        const elementRect = definitionSection.getBoundingClientRect().top;
+        const elementPosition = elementRect - bodyRect;
+        const offsetPosition = elementPosition - offset;
+
+        window.scrollTo({
+            top: offsetPosition,
+            behavior: 'smooth'
+        });
+    } else {
+        console.error('Section with ID "definitions" not found');
+    }
+}
+
+// Füge dies zur Hauptinitialisierung hinzu
+document.addEventListener('DOMContentLoaded', function() {
+    // ... bestehender Code ...
+    
+    // Button-Funktionalität initialisieren
+    const readButton = document.querySelector('.btn-primary');
+    if (readButton) {
+        readButton.addEventListener('click', function(e) {
+            e.preventDefault();
+            scrollToDefinitions();
+        });
+    }
+});
