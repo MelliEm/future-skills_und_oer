@@ -1,0 +1,439 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Future Skills durch OER fördern</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+            background: var(--background);
+            color: var(--primary);
+            line-height: 1.5;
+        }
+
+        .container {
+            max-width: 1040px;
+            margin: 0 auto;
+            padding: 0 24px;
+        }
+
+        .hero {
+            padding: 64px 0;
+            text-align: center;
+            background: var(--card-bg);
+        }
+
+        h1 {
+            font-size: 44px;
+            font-weight: 700;
+            margin-bottom: 24px;
+            line-height: 1.2;
+        }
+
+        .subtitle {
+            font-size: 20px;
+            color: var(--secondary);
+            max-width: 720px;
+            margin: 0 auto 40px;
+        }
+
+        .buttons {
+            display: flex;
+            gap: 16px;
+            justify-content: center;
+            margin-bottom: 40px;
+        }
+
+        .btn {
+            padding: 12px 24px;
+            border-radius: 8px;
+            font-weight: 600;
+            font-size: 16px;
+            text-decoration: none;
+            transition: all 0.2s;
+        }
+
+        .btn-primary {
+            background: var(--accent);
+            color: white;
+        }
+
+        .btn-secondary {
+            background: transparent;
+            border: 1px solid var(--accent);
+            color: var(--accent);
+        }
+
+        .section {
+            padding: 64px 0;
+            border-bottom: 1px solid #E2E8F0;
+        }
+
+        .section:last-child {
+            border-bottom: none;
+        }
+
+        .section-title {
+            font-size: 32px;
+            font-weight: 700;
+            margin-bottom: 40px;
+            text-align: center;
+        }
+
+        .grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 24px;
+            margin-bottom: 40px;
+        }
+
+        .card {
+            background: var(--card-bg);
+            border-radius: 12px;
+            padding: 24px;
+            box-shadow: 0 1px 3px rgba(0,0,0,0.1);
+        }
+
+        .card h3 {
+            font-size: 20px;
+            font-weight: 600;
+            margin-bottom: 16px;
+            color: var(--accent);
+        }
+
+        .card p {
+            color: var(--secondary);
+            font-size: 16px;
+        }
+
+        .list-section {
+            margin-bottom: 32px;
+        }
+
+        .list-section ul {
+            list-style: none;
+            padding-left: 24px;
+        }
+
+        .list-section li {
+            margin-bottom: 16px;
+            color: var(--secondary);
+            position: relative;
+        }
+
+        .list-section li::before {
+            content: "•";
+            color: var(--accent);
+            position: absolute;
+            left: -20px;
+        }
+
+        .author {
+            background: var(--card-bg);
+            border-radius: 12px;
+            padding: 32px;
+            margin-top: 64px;
+        }
+
+        .author h3 {
+            font-size: 24px;
+            font-weight: 600;
+            margin-bottom: 8px;
+        }
+
+        .author .title {
+            color: var(--secondary);
+            margin-bottom: 16px;
+        }
+
+        footer {
+            text-align: center;
+            padding: 24px;
+            color: var(--secondary);
+            font-size: 14px;
+        }
+
+        @media (max-width: 768px) {
+            h1 {
+                font-size: 32px;
+            }
+
+            .subtitle {
+                font-size: 18px;
+            }
+
+            .buttons {
+                flex-direction: column;
+            }
+
+            .btn {
+                width: 100%;
+                text-align: center;
+            }
+
+            .section {
+                padding: 40px 0;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header class="hero">
+        <div class="container">
+            <h1>Masterarbeit:<br>„Future Skills durch OER fördern"</h1>
+            <p class="subtitle">Entdecken Sie, wie Open Educational Resources (OER) die Förderung von zukunftsorientierten Kompetenzen ermöglichen können. Erkunden Sie die Praxis, Potenziale und Perspektiven dieser innovativen Ansätze.</p>
+            <div class="buttons">
+                <a href="#" class="btn btn-primary">Jetzt lesen</a>
+                <a href="#" class="btn btn-secondary">Download</a>
+            </div>
+        </div>
+    </header>
+
+    <main>
+        <!-- Definitionen zu Future Skills -->
+        <section class="section">
+            <div class="container">
+                <h2 class="section-title">Definitionen zu Future Skills</h2>
+                <div class="grid">
+                    <div class="card">
+                        <h3>Kreativität</h3>
+                        <p>Die Fähigkeit, neuartige und nützliche Ideen zu entwickeln und umzusetzen.</p>
+                    </div>
+                    <div class="card">
+                        <h3>Problemlösen</h3>
+                        <p>Die Kompetenz, komplexe Probleme zu analysieren und effektive Lösungen zu finden.</p>
+                    </div>
+                    <div class="card">
+                        <h3>Digitale Kompetenzen</h3>
+                        <p>Die Fähigkeit, digitale Technologien zielgerichtet und reflektiert einzusetzen.</p>
+                    </div>
+                    <div class="card">
+                        <h3>Selbstorganisation</h3>
+                        <p>Die Kompetenz, die eigenen Ressourcen effizient zu planen und zu managen.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Potenziale von Future Skills -->
+        <section class="section">
+            <div class="container">
+                <h2 class="section-title">Potenziale von Future Skills</h2>
+                <div class="grid">
+                    <div class="card">
+                        <h3>Arbeitsmarktfähigkeit</h3>
+                        <p>Durch den Erwerb von Future Skills rüsten sich Lernende für die Herausforderungen der sich schnell wandelnden Arbeitswelt und erhöhen ihre Karrierechancen.</p>
+                    </div>
+                    <div class="card">
+                        <h3>Persönliche Entwicklung</h3>
+                        <p>Future Skills fördern die ganzheitliche Persönlichkeitsentwicklung und Selbstständigkeit der Lernenden.</p>
+                    </div>
+                    <div class="card">
+                        <h3>Innovationskraft</h3>
+                        <p>Die Kompetenzen tragen dazu bei, kreative Lösungen für komplexe Herausforderungen zu finden.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Definitionen von Open Educational Resources -->
+        <section class="section">
+            <div class="container">
+                <h2 class="section-title">Definitionen von Open Educational Resources</h2>
+                <div class="grid">
+                    <div class="card">
+                        <h3>Freier Zugang</h3>
+                        <p>OER sind frei und offen zugänglich, ohne rechtliche, technische oder finanzielle Barrieren.</p>
+                    </div>
+                    <div class="card">
+                        <h3>Offene Lizenzen</h3>
+                        <p>OER sind unter offenen Lizenzen veröffentlicht, die eine Nachnutzung und Anpassung erlauben.</p>
+                    </div>
+                    <div class="card">
+                        <h3>Digitale Ressourcen</h3>
+                        <p>OER umfassen digitale Lehr-/Lernmaterialien wie Texte, Bilder, Videos oder interaktive Inhalte.</p>
+                    </div>
+                    <div class="card">
+                        <h3>Kollaborative Erstellung</h3>
+                        <p>OER können von Lehrenden und Lernenden gemeinsam erstellt und weiterentwickelt werden.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+<!-- Potenziale von Open Educational Resources -->
+        <section class="section">
+            <div class="container">
+                <h2 class="section-title">Potenziale von Open Educational Resources</h2>
+                <div class="grid">
+                    <div class="card">
+                        <h3>Freier Zugang</h3>
+                        <p>Bildungsinhalte stehen allen Lernenden frei zur Verfügung.</p>
+                    </div>
+                    <div class="card">
+                        <h3>Kollaboration</h3>
+                        <p>OER fördern den Austausch und die Zusammenarbeit zwischen Lernenden.</p>
+                    </div>
+                    <div class="card">
+                        <h3>Innovative Formate</h3>
+                        <p>Lernzentrierte Lehr- und Lernformate werden gefördert.</p>
+                    </div>
+                    <div class="card">
+                        <h3>Adaptiv</h3>
+                        <p>OER können leicht an individuelle Bedürfnisse angepasst werden.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Praxisbeispiele -->
+        <section class="section">
+            <div class="container">
+                <h2 class="section-title">Praxisbeispiele: Wie OER Future Skills fördern können</h2>
+                <div class="grid">
+                    <div class="card">
+                        <h3>Online-Kurse</h3>
+                        <p>OER-basierte Online-Kurse fördern selbstgesteuerte Lernkompetenzen.</p>
+                    </div>
+                    <div class="card">
+                        <h3>Digitale Werkzeuge</h3>
+                        <p>Kollaborative OER-Erstellung schult digitale Kompetenzen.</p>
+                    </div>
+                    <div class="card">
+                        <h3>Projektarbeit</h3>
+                        <p>Projekte mit OER-Materialien entwickeln Problemlösungs- und Teamfähigkeiten.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- OER-Adoptionsherausforderungen -->
+        <section class="section">
+            <div class="container">
+                <h2 class="section-title">OER-Adoptionsherausforderungen</h2>
+                <div class="list-section">
+                    <ul>
+                        <li>Fehlende Kompetenzen und Unsicherheiten bei Lehrenden im Umgang mit OER</li>
+                        <li>Mangelnde institutionelle Unterstützung und Anreizsysteme zur Nutzung von OER</li>
+                        <li>Rechtliche Unsicherheiten bei der Nachnutzung und Anpassung von Inhalten</li>
+                        <li>Geringe Sichtbarkeit und Auffindbarkeit geeigneter OER-Materialien</li>
+                        <li>Kulturelle Barrieren und Ängste vor Qualitätsverlusten bei der Nutzung fremder Inhalte</li>
+                    </ul>
+                </div>
+            </div>
+        </section>
+
+        <!-- OER für Future Skills -->
+        <section class="section">
+            <div class="container">
+                <h2 class="section-title">OER für Future Skills</h2>
+                <div class="grid">
+                    <div class="card">
+                        <h3>Kreativität</h3>
+                        <p>OER fördern kreatives Denken und Problemlösen. Lernende können mit OER-basierten Werkzeugen eigene Inhalte erstellen und vorhandene Materialien kreativ anpassen.</p>
+                    </div>
+                    <div class="card">
+                        <h3>Digitale Kompetenzen</h3>
+                        <p>OER-Plattformen bieten digitale Werkzeuge, die Kompetenzen wie Recherche, Organisation und Teamarbeit schulen.</p>
+                    </div>
+                    <div class="card">
+                        <h3>Lernen lernen</h3>
+                        <p>OER ermöglichen selbstgesteuertes, lebenslanges Lernen und fördern Metakognition und Reflexionsfähigkeit.</p>
+                    </div>
+                    <div class="card">
+                        <h3>Interdisziplinarität</h3>
+                        <p>OER können fächerübergreifend kombiniert werden, um neue Perspektiven und Lösungen zu erschließen.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Handlungsempfehlungen -->
+        <section class="section">
+            <div class="container">
+                <h2 class="section-title">Handlungsempfehlungen zum Einsatz von OER</h2>
+                <div class="grid">
+                    <div class="card">
+                        <h3>Schaffung einer OER-Kultur</h3>
+                        <p>Durch Sensibilisierung, Anreizsysteme und Unterstützung für Lehrende bei der Erstellung und Nutzung von OER.</p>
+                    </div>
+                    <div class="card">
+                        <h3>Gezielte Förderung</h3>
+                        <p>Von Future Skills wie digitalen Kompetenzen durch OER-basierte Lehrangebote.</p>
+                    </div>
+                    <div class="card">
+                        <h3>Entwicklung kollaborativer Lernformate</h3>
+                        <p>Mit OER, um Fähigkeiten wie Teamwork, Problemlösung und Kreativität zu fördern.</p>
+                    </div>
+                    <div class="card">
+                        <h3>Anpassung der Curricula</h3>
+                        <p>An die Anforderungen von Future Skills und den Einsatz von OER.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Zukünftige Forschungsrichtungen -->
+        <section class="section">
+            <div class="container">
+                <h2 class="section-title">Zukünftige Forschungsrichtungen</h2>
+                <div class="grid">
+                    <div class="card">
+                        <h3>Empirische Studien</h3>
+                        <p>Evaluierung der Wirksamkeit von OER zur Förderung von Future Skills</p>
+                    </div>
+                    <div class="card">
+                        <h3>Umsetzungsstrategien</h3>
+                        <p>Analyse erfolgreicher Beispiele für den Einsatz von OER</p>
+                    </div>
+                    <div class="card">
+                        <h3>Interdisziplinäre Zusammenarbeit</h3>
+                        <p>Kooperation zwischen Hochschulen, Wirtschaft und Bildungsforschung</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Fazit und Ausblick -->
+        <section class="section">
+            <div class="container">
+                <h2 class="section-title">Fazit und Ausblick</h2>
+                <div class="grid">
+                    <div class="card">
+                        <h3>Zusammenführung von Future Skills und OER</h3>
+                        <p>Die Förderung von Future Skills kann durch den Einsatz von OER in der Hochschullehre unterstützt werden.</p>
+                    </div>
+                    <div class="card">
+                        <h3>Erfolgsfaktoren in der Praxis</h3>
+                        <p>Entscheidend sind die Motivation und Kompetenz von Lehrenden sowie die institutionelle Verankerung und der Ausbau der OER-Infrastrukturen.</p>
+                    </div>
+                    <div class="card">
+                        <h3>Weitere Forschung</h3>
+                        <p>Es besteht Bedarf an vertiefenden Studien zu Wirkungen und Umsetzungsstrategien.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Autorin -->
+        <section class="section">
+            <div class="container">
+                <div class="author">
+                    <h3>Melanie Müller, MA</h3>
+                    <p class="title">MALIS - Master Bibliotheks- und Informationswissenschaft</p>
+                    <p>Melanie Müller analysierte in ihrer Masterarbeit den Einsatz von OER in der Hochschullehre hinsichtlich der Förderung von Future Skills. Sie empfiehlt weitere Forschungen, um die Effekte und Umsetzungsstrategien genauer zu untersuchen.</p>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <div class="container">
+            <p>Made with Gamma</p>
+        </div>
+    </footer>
+</body>
+</html>
