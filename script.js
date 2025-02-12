@@ -1,4 +1,4 @@
-// ===== Hauptinitialisierung =====
+// Hauptinitialisierung
 document.addEventListener('DOMContentLoaded', function() {
     initializeSearch();
     initializeAnimations();
@@ -15,7 +15,38 @@ document.addEventListener('DOMContentLoaded', function() {
             scrollToDefinitions();
         });
     }
+
+    // Download-Button Funktionalität
+    const downloadButton = document.querySelector('.download-btn');
+    if (downloadButton) {
+        downloadButton.addEventListener('click', function(e) {
+            e.preventDefault();
+            downloadPDF(this);
+        });
+    }
 });
+
+    try {
+        const pdfUrl = 'download/pdf_download.pdf';
+        
+        const link = document.createElement('a');
+        link.href = pdfUrl;
+        link.download = 'pdf_download.pdf';
+        
+        document.body.appendChild(link);
+        link.click();
+        document.body.removeChild(link);
+    } catch (error) {
+        console.error('Download fehlgeschlagen:', error);
+        alert('Download fehlgeschlagen. Bitte versuchen Sie es später erneut.');
+    } finally {
+        spinner.classList.add('hidden');
+        button.disabled = false;
+    }
+}
+
+
+
 
 // ===== Navigation Initialisierung =====
 function initializeNavigation() {
