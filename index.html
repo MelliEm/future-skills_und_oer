@@ -8,6 +8,28 @@
     <script src="script.js" defer></script>
 </head>
 <body>
+    <!-- Burger Menü Button -->
+<div class="burger-menu" onclick="toggleMenu()">
+    <span></span>
+    <span></span>
+    <span></span>
+</div>
+
+<!-- Overlay für Mobile -->
+<div class="overlay" onclick="toggleMenu()"></div>
+
+<!-- Vertikale Navigation -->
+<nav class="nav-sidebar">
+    <!-- Diese Links entsprechend deiner Überschriften anpassen -->
+    <a href="#section1">Erste Überschrift</a>
+    <a href="#section2">Zweite Überschrift</a>
+    <a href="#section3">Dritte Überschrift</a>
+    <!-- ... weitere Links ... -->
+</nav>
+
+<!-- Nach-oben-Button -->
+<button id="topBtn" onclick="scrollToTop()">↑</button>
+    
     <header class="hero">
         <div class="container">
             <h1>Masterarbeit:<br>„Future Skills durch OER fördern"</h1>
