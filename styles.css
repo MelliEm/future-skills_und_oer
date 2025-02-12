@@ -106,6 +106,7 @@ h1 {
     margin-bottom: 40px;
 }
 
+/* Cards */
 .card {
     background: var(--card-bg);
     border-radius: 12px;
@@ -128,6 +129,52 @@ h1 {
 .card p {
     color: var(--text);
     font-size: 16px;
+}
+
+/* Feature-Cards */
+.feature-cards-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 2rem;
+    margin-bottom: 2rem;
+}
+
+.feature-card {
+    display: flex;
+    flex-direction: column;
+}
+
+.feature-card-image {
+    border-radius: 12px;
+    overflow: hidden;
+    background: var(--primary);
+    aspect-ratio: 3/2;
+    margin-bottom: 1rem;
+}
+
+.feature-card-content {
+    text-align: center;
+}
+
+.feature-card-title {
+    margin: 0 0 0.5rem 0;
+    font-size: 1.25rem;
+    color: var(--text);
+    font-weight: 600;
+}
+
+.feature-card-text {
+    margin: 0;
+    font-size: 1rem;
+    color: var(--text);
+    line-height: 1.5;
+}
+
+@media (max-width: 768px) {
+    .feature-cards-grid {
+        grid-template-columns: 1fr;
+        gap: 2rem;
+    }
 }
 
 .list-section {
