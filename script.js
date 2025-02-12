@@ -27,7 +27,7 @@ document.addEventListener('DOMContentLoaded', function() {
 });
 
     try {
-        const pdfUrl = 'download/pdf_download.pdf';
+        const pdfUrl = 'https://github.com/MelliEm/future-skills_und_oer/blob/main/download/pdf_download.pdf';
         
         const link = document.createElement('a');
         link.href = pdfUrl;
