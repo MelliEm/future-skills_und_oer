@@ -198,6 +198,29 @@ h1 {
 
 
 /** Button Heaser **/
+---
+
+/**.btn {
+  padding: 12px 24px;
+  border-radius: 8px;
+  font-weight: 600;
+  font-size: 16px;
+  text-decoration: none;
+  transition: 0.2s;
+}**/
+
+.btn-primary {
+  background: var(--accent);
+  color: white;
+}
+
+.btn-secondary {
+  background: transparent;
+  border: 2px solid white;
+  color: white;
+}
+
+---
 .buttons {
     display: flex;
     gap: 1rem; /* Abstand zwischen den Buttons */
@@ -218,23 +241,6 @@ h1 {
     min-width: 120px; /* Minimale Breite für Buttons */
 }
 
-.btn-primary {
-    background-color: #2563eb; /* Blaue Farbe */
-    color: white;
-}
-
-.btn-primary:hover {
-    background-color: #1d4ed8;
-}
-
-.btn-secondary {
-    background-color: #4b5563; /* Graue Farbe */
-    color: white;
-}
-
-.btn-secondary:hover {
-    background-color: #374151;
-}
 
 /* Für bessere mobile Darstellung */
 @media (max-width: 640px) {
