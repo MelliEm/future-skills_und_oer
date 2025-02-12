@@ -214,10 +214,18 @@ h1 {
     background: rgba(255,255,255,0.1);
 }
 
+/* Sektionen-Abstände wie im Original */
 .section {
     padding: 64px 0;
     border-bottom: 1px solid rgba(198, 12, 15, 0.1);
 }
+
+/* Spezifische Sektionen */
+.section1, .section2, .section3 {
+    padding: 64px 0;
+    border-bottom: 1px solid rgba(198, 12, 15, 0.1);
+}
+
 
 .section:last-child {
     border-bottom: none;
@@ -270,6 +278,7 @@ h1 {
     gap: 2rem;
     margin-bottom: 2rem;
 }
+
 
 .feature-card {
     display: flex;
