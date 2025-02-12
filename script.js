@@ -5,7 +5,7 @@ document.addEventListener('DOMContentLoaded', function() {
     initializeScrollFeatures();
     setupKeyboardNavigation();
     setupThemeToggle();
-    initializeNavigation(); // Neue Funktion
+    initializeNavigation();
 });
 
 // ===== Navigation Initialisierung =====
@@ -52,12 +52,53 @@ function initializeNavigation() {
     }
 }
 
+// ===== Scroll Features Initialisierung =====
+function initializeScrollFeatures() {
+    const topBtn = document.getElementById('topBtn');
+    if (!topBtn) return;
+
+    // Scroll Event Handler für Back to Top Button
+    window.addEventListener('scroll', debounce(() => {
+        if (document.body.scrollTop > 200 || document.documentElement.scrollTop > 200) {
+            topBtn.classList.add('visible');
+        } else {
+            topBtn.classList.remove('visible');
+        }
+    }, 100));
+
+    // Click Event für Back to Top Button
+    topBtn.addEventListener('click', (e) => {
+        e.preventDefault();
+        scrollToTop();
+    });
+
+    // Scroll Spy für Navigation
+    window.addEventListener('scroll', debounce(() => {
+        const scrollPosition = window.scrollY;
+
+        document.querySelectorAll('section').forEach(section => {
+            const sectionTop = section.offsetTop - 100;
+            const sectionHeight = section.offsetHeight;
+            const sectionId = section.getAttribute('id');
+
+            if (scrollPosition >= sectionTop && scrollPosition < sectionTop + sectionHeight) {
+                document.querySelectorAll('.nav-sidebar a').forEach(link => {
+                    link.classList.remove('active');
+                    if (link.getAttribute('href') === '#' + sectionId) {
+                        link.classList.add('active');
+                    }
+                });
+            }
+        });
+    }, 100));
+}
+
 // ===== Suchfunktionalität =====
 function initializeSearch() {
     const searchInput = document.getElementById('searchInput');
     const searchResults = document.getElementById('searchResults');
     
-    if (!searchInput || !searchResults) return; // Frühe Rückgabe wenn Elemente nicht existieren
+    if (!searchInput || !searchResults) return;
 
     const cards = document.querySelectorAll('.card');
     
@@ -78,7 +119,38 @@ function initializeSearch() {
     }, 300));
 }
 
-// ==== Menü Funktionen ====
+// ===== Animation Initialisierung =====
+function initializeAnimations() {
+    // Hier können Animationen initialisiert werden
+    // Zum Beispiel mit IntersectionObserver für Scroll-Animationen
+}
+
+// ===== Keyboard Navigation =====
+function setupKeyboardNavigation() {
+    document.addEventListener('keydown', (e) => {
+        if (e.key === 'Escape') {
+            const nav = document.querySelector('.nav-sidebar');
+            const overlay = document.querySelector('.overlay');
+            if (nav.classList.contains('active')) {
+                nav.classList.remove('active');
+                overlay.classList.remove('active');
+            }
+        }
+    });
+}
+
+// ===== Theme Toggle =====
+function setupThemeToggle() {
+    const themeToggle = document.getElementById('themeToggle');
+    if (!themeToggle) return;
+
+    themeToggle.addEventListener('click', () => {
+        document.body.classList.toggle('dark-theme');
+        localStorage.setItem('theme', document.body.classList.contains('dark-theme') ? 'dark' : 'light');
+    });
+}
+
+// ===== Utility Funktionen =====
 function toggleMenu() {
     const nav = document.querySelector('.nav-sidebar');
     const overlay = document.querySelector('.overlay');
@@ -89,7 +161,6 @@ function toggleMenu() {
     overlay.classList.toggle('active');
 }
 
-// ===== Scroll Funktionen =====
 function scrollToTop() {
     window.scrollTo({
         top: 0,
@@ -97,39 +168,22 @@ function scrollToTop() {
     });
 }
 
-// Verbessertes Scroll-Event-Handling
-const handleScroll = debounce(() => {
-    const topBtn = document.getElementById('topBtn');
-    const scrollPosition = window.scrollY;
-    
-    // Nach-oben-Button Handling
-    if (topBtn) {
-        topBtn.style.display = scrollPosition > 20 ? 'block' : 'none';
-    }
-    
-    // Aktive Navigation markieren
-    let currentSection = '';
-    document.querySelectorAll('section').forEach(section => {
-        const sectionTop = section.offsetTop - 100;
-        if (scrollPosition >= sectionTop) {
-            currentSection = section.getAttribute('id');
-        }
-    });
+function debounce(func, wait) {
+    let timeout;
+    return function executedFunction(...args) {
+        const later = () => {
+            clearTimeout(timeout);
+            func(...args);
+        };
+        clearTimeout(timeout);
+        timeout = setTimeout(later, wait);
+    };
+}
 
-    document.querySelectorAll('.nav-sidebar a').forEach(link => {
-        link.classList.toggle('active', link.getAttribute('href').substring(1) === currentSection);
-    });
-}, 100);
-
-window.addEventListener('scroll', handleScroll);
-
-// [Rest des Codes bleibt gleich...]
-
-// ===== Verbesserte Error Handling =====
+// ===== Error Handling =====
 window.addEventListener('error', function(e) {
     console.error('JavaScript Error:', e.message, '\nLine:', e.lineno, '\nFile:', e.filename);
     
-    // Optional: Benutzerfreundliche Fehlermeldung
     if (process.env.NODE_ENV !== 'production') {
         const errorMessage = document.createElement('div');
         errorMessage.style.cssText = `
@@ -149,29 +203,24 @@ window.addEventListener('error', function(e) {
     }
 });
 
-// Verbesserte Performance durch RequestAnimationFrame
-function smoothScroll(target, duration) {
-    const targetPosition = target.getBoundingClientRect().top;
-    const startPosition = window.pageYOffset;
-    const startTime = performance.now();
+// ===== Suchresultate anzeigen =====
+function displaySearchResults(results, searchTerm) {
+    const searchResults = document.getElementById('searchResults');
+    if (!searchResults) return;
 
-    function animation(currentTime) {
-        const timeElapsed = currentTime - startTime;
-        const run = ease(timeElapsed, startPosition, targetPosition, duration);
-        
-        window.scrollTo(0, run);
-        
-        if (timeElapsed < duration) {
-            requestAnimationFrame(animation);
-        }
+    if (results.length === 0) {
+        searchResults.innerHTML = '<p>Keine Ergebnisse gefunden.</p>';
+        searchResults.style.display = 'block';
+        return;
     }
 
-    function ease(t, b, c, d) {
-        t /= d / 2;
-        if (t < 1) return c / 2 * t * t + b;
-        t--;
-        return -c / 2 * (t * (t - 2) - 1) + b;
-    }
+    const resultsHtml = results.map(card => `
+        <div class="search-result">
+            <h4>${card.querySelector('h3').textContent}</h4>
+            <p>${card.querySelector('p').textContent}</p>
+        </div>
+    `).join('');
 
-    requestAnimationFrame(animation);
+    searchResults.innerHTML = resultsHtml;
+    searchResults.style.display = 'block';
 }
