@@ -202,3 +202,47 @@ footer {
         padding: 40px 0;
     }
 }
+
+/* Animations Keyframes */
+@keyframes fadeInSide {
+    from {
+        opacity: 0;
+        transform: translateX(-30px);
+    }
+    to {
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
+
+@keyframes scaleIn {
+    from {
+        opacity: 0;
+        transform: scale(0.95);
+    }
+    to {
+        opacity: 1;
+        transform: scale(1);
+    }
+}
+
+/* Basis-Zustände für die Animationen */
+.fade-in-side {
+    opacity: 0;
+    animation: fadeInSide 1s ease forwards;
+}
+
+.scale-in {
+    opacity: 0;
+    animation: scaleIn 1s ease forwards;
+}
+
+/* Verzögerungen für die Karten */
+.fade-in-side .card:nth-child(1) { animation-delay: 0.1s; }
+.fade-in-side .card:nth-child(2) { animation-delay: 0.2s; }
+.fade-in-side .card:nth-child(3) { animation-delay: 0.3s; }
+.fade-in-side .card:nth-child(4) { animation-delay: 0.4s; }
+
+.scale-in .card:nth-child(1) { animation-delay: 0.1s; }
+.scale-in .card:nth-child(2) { animation-delay: 0.2s; }
+.scale-in .card:nth-child(3) { animation-delay: 0.3s; }
