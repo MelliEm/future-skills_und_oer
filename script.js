@@ -30,6 +30,57 @@ function initializeSearch() {
     }, 300));
 }
 
+// ==== Side Nav ====
+// Menü Toggle Funktion
+function toggleMenu() {
+    document.querySelector('.nav-sidebar').classList.toggle('active');
+    document.querySelector('.overlay').classList.toggle('active');
+}
+
+// Links im Mobile-Menü schließen das Menü
+document.querySelectorAll('.nav-sidebar a').forEach(link => {
+    link.addEventListener('click', () => {
+        if (window.innerWidth < 768) {
+            toggleMenu();
+        }
+    });
+});
+
+// Scroll to Top Funktion
+function scrollToTop() {
+    window.scrollTo({
+        top: 0,
+        behavior: 'smooth'
+    });
+}
+
+// Nach-oben-Button Ein-/Ausblenden
+window.onscroll = function() {
+    const topBtn = document.getElementById('topBtn');
+    if (document.body.scrollTop > 20 || document.documentElement.scrollTop > 20) {
+        topBtn.style.display = 'block';
+    } else {
+        topBtn.style.display = 'none';
+    }
+    
+    // Aktiven Abschnitt in der Navigation markieren
+    let current = '';
+    document.querySelectorAll('section').forEach(section => {
+        const sectionTop = section.offsetTop;
+        if (scrollY >= sectionTop - 100) {
+            current = section.getAttribute('id');
+        }
+    });
+
+    document.querySelectorAll('.nav-sidebar a').forEach(link => {
+        link.classList.remove('active');
+        if (link.getAttribute('href').substring(1) === current) {
+            link.classList.add('active');
+        }
+    });
+};
+
+
 // ===== Animations-Initialisierung =====
 function initializeAnimations() {
     const observer = new IntersectionObserver((entries) => {
