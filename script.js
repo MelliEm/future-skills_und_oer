@@ -161,6 +161,27 @@ function initializeSearch() {
     }, 300));
 }
 
+// ===== Suchresultate anzeigen =====
+function displaySearchResults(results, searchTerm) {
+    const searchResults = document.getElementById('searchResults');
+    if (!searchResults) return;
+
+    if (results.length === 0) {
+        searchResults.innerHTML = '<p>Keine Ergebnisse gefunden.</p>';
+        searchResults.style.display = 'block';
+        return;
+    }
+
+    const resultsHtml = results.map(card => `
+        <div class="search-result">
+            <h4>${card.querySelector('h3').textContent}</h4>
+            <p>${card.querySelector('p').textContent}</p>
+        </div>
+    `).join('');
+
+    searchResults.innerHTML = resultsHtml;
+    searchResults.style.display = 'block';
+}
 // ===== Animation Initialisierung =====
 function initializeAnimations() {
     // Hier können Animationen initialisiert werden
