@@ -6,7 +6,9 @@ document.addEventListener('DOMContentLoaded', function() {
     setupKeyboardNavigation();
     setupThemeToggle();
     initializeNavigation();
-    
+
+
+  
     // Button-Funktionalität für "Jetzt lesen"
     const readButton = document.querySelector('.btn-primary');
     if (readButton) {
@@ -285,16 +287,4 @@ function scrollToDefinitions() {
     }
 }
 
-// Füge dies zur Hauptinitialisierung hinzu
-document.addEventListener('DOMContentLoaded', function() {
-    // ... bestehender Code ...
-    
-    // Button-Funktionalität initialisieren
-    const readButton = document.querySelector('.btn-primary');
-    if (readButton) {
-        readButton.addEventListener('click', function(e) {
-            e.preventDefault();
-            scrollToDefinitions();
-        });
-    }
-});
+
